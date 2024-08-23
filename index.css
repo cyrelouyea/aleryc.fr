@@ -17,7 +17,7 @@
   font-family: "Monaspace Neon";
   src: 
     local("Monaspace Neon"),
-    url("fonts/monaspace-neon-latin-400-normal.woff2") format("woff2");
+    url("public/fonts/monaspace-neon-latin-400-normal.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -26,7 +26,7 @@
   font-family: "Monaspace Neon";
   src: 
     local("Monaspace Neon"),
-    url("fonts/monaspace-neon-latin-700-normal.woff2") format("woff2");
+    url("public/fonts/monaspace-neon-latin-700-normal.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
 }
@@ -35,7 +35,7 @@
   font-family: "Monaspace Neon";
   src: 
     local("Monaspace Neon"),
-    url("fonts/monaspace-neon-latin-800-normal.woff2") format("woff2");
+    url("public/fonts/monaspace-neon-latin-800-normal.woff2") format("woff2");
   font-weight: bolder;
   font-style: normal;
 }
@@ -44,7 +44,7 @@
   font-family: "Monaspace Neon";
   src: 
     local("Monaspace Neon"),
-    url("fonts/monaspace-neon-latin-200-italic.woff2") format("woff2");
+    url("public/fonts/monaspace-neon-latin-200-italic.woff2") format("woff2");
   font-weight: lighter;
   font-style: italic;
 }
@@ -54,7 +54,7 @@
   font-family: "Monaspace Neon";
   src: 
     local("Monaspace Neon"),
-    url("fonts/monaspace-neon-latin-400-italic.woff2") format("woff2");
+    url("public/fonts/monaspace-neon-latin-400-italic.woff2") format("woff2");
   font-weight: normal;
   font-style: italic;
 }
@@ -63,7 +63,7 @@
   font-family: "Monaspace Neon";
   src: 
     local("Monaspace Neon"),
-    url("fonts/monaspace-neon-latin-700-italic.woff2") format("woff2");
+    url("public/fonts/monaspace-neon-latin-700-italic.woff2") format("woff2");
   font-weight: bold;
   font-style: italic;
 }
@@ -72,7 +72,7 @@
   font-family: "Monaspace Neon";
   src: 
     local("Monaspace Neon"),
-    url("fonts/monaspace-neon-latin-800-italic.woff2") format("woff2");
+    url("public/fonts/monaspace-neon-latin-800-italic.woff2") format("woff2");
   font-weight: bolder;
   font-style: italic;
 }
@@ -98,14 +98,14 @@ a.link {
   display: block;
   text-decoration: none;
   padding: 1em;
-  width: 500px;
   text-align: center;
   background-color: var(--secondary-color);
   color: var(--primary-color);
-  transition: background-color 0.1s linear, color 0.1s linear;
+  transition: background-color 0.2s linear, color 0.2s linear;
   font-weight: bold;
   text-transform: uppercase;
 }
+
 
 a.link:hover,
 a.link:focus-visible {
@@ -114,14 +114,43 @@ a.link:focus-visible {
   outline: 0;
 }
 
-div.border:has(a.link) {
+.border:has(a.link) {
+  width: 80%;
+  /* margin: 0 10px; */
   padding: 10px;
-  transition: border-color 0.5s linear;
+  transition: border-color 0.7s linear;
   border: 1px solid transparent;
 }
 
-div.border:has(a.link:hover, a.link:focus-visible) {
+.border:has(a.link:hover, a.link:focus-visible) {
   border: 1px solid var(--primary-color);
+}
+
+
+nav {
+  background-color: var(--secondary-color);
+  border-bottom: 1px solid white;
+  z-index: 10;
+}
+
+nav > ul {
+  margin: 0;
+  padding: 5px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+@media screen and (max-width: 600px) {
+
+  nav > ul {
+    flex-direction: column;
+  }
+}
+nav > ul > li {
+  flex-grow: 1;
 }
 
 
@@ -130,7 +159,7 @@ div.border:has(a.link:hover, a.link:focus-visible) {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 1em 2em;
+  /* padding: 1em 2em; */
 }
 
 .gallery .card {
@@ -168,7 +197,7 @@ div.border:has(a.link:hover, a.link:focus-visible) {
   transition: all 0.2s ease-out, border 0.5s linear;
   border: 2px solid transparent;
   z-index: 0;
-  padding: 2em;
+  /* padding: 2em; */
 }
 
 .gallery .card:hover img.fore {
