@@ -36,7 +36,7 @@ const Card = ({ title, href, src, embed }) => {
   const onclick = () => {
     show.val = !show.val;
   }
-
+  "".replace()
   return div(
     div(
       { class: "game-card" },
@@ -49,7 +49,7 @@ const Card = ({ title, href, src, embed }) => {
         div(
           { style: "display: flex; gap: 1em" },
           a(
-            { class: "game-card-button", href: '#', onclick },
+            { class: `plausible-event-name=game+play plausible-event-game=${title.replace(/\s+/, '+')} game-card-button`, href: '#', onclick },
             img({ src }),
             "Play",
           ),

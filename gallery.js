@@ -82,7 +82,7 @@ const Gallery = () => {
   return div(
     { class: "gallery" },
     shuffledImages.val.map(image => 
-      Card({ src: image.src, onclick: () => { 
+      Card({ class: `plausible-event-name=gallery+image+view plausible-event-filename=${image.src}` , src: image.src, onclick: () => { 
         isOpen.val = true;
         selectedImage.val = image;
       }})
