@@ -58,7 +58,7 @@ function shuffle(array) {
 }
 
 const Card = ({ src, onclick }) => div(
-  { class: "card", onclick },
+  { class:  `plausible-event-name=gallery+image+view plausible-event-filename=${image.src} card`, onclick },
   img({ src, class: "back" }),
   img({ src, class: "fore" })
 )
@@ -82,7 +82,7 @@ const Gallery = () => {
   return div(
     { class: "gallery" },
     shuffledImages.val.map(image => 
-      Card({ class: `plausible-event-name=gallery+image+view plausible-event-filename=${image.src}` , src: image.src, onclick: () => { 
+      Card({ src: image.src, onclick: () => { 
         isOpen.val = true;
         selectedImage.val = image;
       }})
