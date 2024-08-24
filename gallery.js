@@ -58,7 +58,7 @@ function shuffle(array) {
 }
 
 const Card = ({ src, onclick }) => div(
-  { class:  `plausible-event-name=gallery+image+view plausible-event-filename=${image.src} card`, onclick },
+  { class:  `plausible-event-name=gallery+image+view plausible-event-filename=${src} card`, onclick },
   img({ src, class: "back" }),
   img({ src, class: "fore" })
 )
